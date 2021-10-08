@@ -225,15 +225,3 @@ async def notforu(_, m: Message):
 
 allcmd = ["play", "current", "playlist", f"play@{Config.BOT_USERNAME}", f"current@{Config.BOT_USERNAME}", f"playlist@{Config.BOT_USERNAME}"] + admincmds
 
-@Client.on_message(filters.command(allcmd) & filters.group & ~(filters.chat(Config.CHAT_ID) | filters.private | filters.chat(Config.LOG_GROUP)))
-async def not_chat(_, m: Message):
-    buttons = [
-            [
-                InlineKeyboardButton("CHANNEL", url="https://t.me/AsmSafoe"),
-                InlineKeyboardButton("SUPPORT", url="https://t.me/SafoTeBot"),
-            ],
-            [
-                InlineKeyboardButton("🤖 MAKE YOUR OWN BOT 🤖", url="https://heroku.com/deploy?template=https://github.com/AsmSafone/VideoPlayerBot/tree/alpha"),
-            ]
-         ]
-    await m.reply_text(text="**Sorry, You Can't Use This Bot In This Group 🤷‍♂️! But You Can Make Your Own Bot Like This From The [Source Code](https://github.com/AsmSafone/VideoPlayerBot/tree/alpha) Below 😉!**", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
