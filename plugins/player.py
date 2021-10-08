@@ -32,7 +32,7 @@ from helpers.utils import delete, download, get_admins, is_admin, get_buttons, g
 admin_filter=filters.create(is_admin)
 
 
-@Client.on_message(filters.command(["play", f"play@{Config.BOT_USERNAME}"]) & (filters.chat(Config.CHAT_ID) | filters.private | filters.chat(Config.LOG_GROUP)))
+@Client.on_message(filters.command(["vplay", f"vplay@{Config.BOT_USERNAME}"]) & (filters.chat(Config.CHAT_ID) | filters.private | filters.chat(Config.LOG_GROUP)))
 async def add_to_playlist(_, message: Message):
     if Config.ADMIN_ONLY == "True":
         admins = await get_admins(Config.CHAT_ID)
