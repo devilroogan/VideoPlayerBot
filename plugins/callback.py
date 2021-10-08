@@ -149,59 +149,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         except MessageNotModified:
             pass
 
-    elif query.data.lower() == "help":
-        buttons = [
-            [
-                InlineKeyboardButton("SEARCH VIDEOS", switch_inline_query_current_chat=""),
-            ],
-            [
-                InlineKeyboardButton("CHANNEL", url="https://t.me/AsmSafone"),
-                InlineKeyboardButton("SUPPORT", url="https://t.me/AsmSupport"),
-            ],
-            [
-                InlineKeyboardButton("MORE BOTS", url="https://t.me/AsmSafone/173"),
-                InlineKeyboardButton("SOURCE CODE", url="https://github.com/AsmSafone/VideoPlayerBot/tree/alpha"),
-            ],
-            [
-                InlineKeyboardButton("BACK HOME", callback_data="home"),
-                InlineKeyboardButton("CLOSE MENU", callback_data="close"),
-            ]
-            ]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        try:
-            await query.edit_message_text(
-                HELP_TEXT,
-                reply_markup=reply_markup
-            )
-        except MessageNotModified:
-            pass
-
-    elif query.data.lower() == "home":
-        buttons = [
-            [
-                InlineKeyboardButton("SEARCH VIDEOS", switch_inline_query_current_chat=""),
-            ],
-            [
-                InlineKeyboardButton("CHANNEL", url="https://t.me/AsmSafone"),
-                InlineKeyboardButton("SUPPORT", url="https://t.me/AsmSupport"),
-            ],
-            [
-                InlineKeyboardButton("MORE BOTS", url="https://t.me/AsmSafone/173"),
-                InlineKeyboardButton("SOURCE CODE", url="https://github.com/AsmSafone/VideoPlayerBot/tree/alpha"),
-            ],
-            [
-                InlineKeyboardButton("❔ HOW TO USE ❔", callback_data="help"),
-            ]
-            ]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        try:
-            await query.edit_message_text(
-                HOME_TEXT.format(query.from_user.first_name, query.from_user.id),
-                reply_markup=reply_markup
-            )
-        except MessageNotModified:
-            pass
-
+    
     elif query.data.lower() == "close":
         try:
             await query.message.delete()
