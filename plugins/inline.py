@@ -38,9 +38,9 @@ async def search(client, query):
         answers.append(
             InlineQueryResultPhoto(
                 title="Deploy Own Video Player Bot",
-                thumb_url="https://telegra.ph//file/3ed5eafa4a95960d33980.jpg",
-                photo_url="https://telegra.ph//file/3ed5eafa4a95960d33980.jpg",
-                caption=f"{Config.REPLY_MESSAGE}\n\n<b>© Powered By : \n@AsmSafone | @AsmSupport 👑</b>",
+                thumb_url="https://telegra.ph/file/2b523da496466eaaa3fb0.jpg",
+                photo_url="https://telegra.ph/file/2b523da496466eaaa3fb0.jpg",
+                caption=f"{Config.REPLY_MESSAGE}\n\n<b>© Powered By : \n@sparkypro | @sparkypro_support 👑</b>",
                 reply_markup=InlineKeyboardMarkup(buttons)
                 )
             )
