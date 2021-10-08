@@ -23,18 +23,7 @@ from youtubesearchpython import VideosSearch
 from pyrogram.handlers import InlineQueryHandler
 from pyrogram.types import InlineQueryResultArticle, InlineQueryResultPhoto, InputTextMessageContent, InlineKeyboardButton, InlineKeyboardMarkup
 
-buttons = [
-            [
-                InlineKeyboardButton("❔ HOW TO USE ME ❔", callback_data="help"),
-            ],
-            [
-                InlineKeyboardButton("CHANNEL", url="https://t.me/AsmSafone"),
-                InlineKeyboardButton("SUPPORT", url="https://t.me/SafoTheBot"),
-            ],
-            [
-                InlineKeyboardButton("🤖 MAKE YOUR OWN BOT 🤖", url="https://heroku.com/deploy?template=https://github.com/AsmSafone/VideoPlayerBot/tree/alpha"),
-            ]
-         ]
+
 
 def get_cmd(dur):
     if dur:
