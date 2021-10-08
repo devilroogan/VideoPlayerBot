@@ -216,12 +216,12 @@ async def stream(client, m: Message):
     await delete(s)
 
 
-admincmds=["join", "leave", "pause", "resume", "skip", "restart", "volume", "shuffle", "clrlist", "update", "replay", "getlogs", "stream", "mute", "unmute", "seek", f"mute@{Config.BOT_USERNAME}", f"unmute@{Config.BOT_USERNAME}", f"seek@{Config.BOT_USERNAME}", f"stream@{Config.BOT_USERNAME}", f"getlogs@{Config.BOT_USERNAME}", f"replay@{Config.BOT_USERNAME}", f"join@{Config.BOT_USERNAME}", f"leave@{Config.BOT_USERNAME}", f"pause@{Config.BOT_USERNAME}", f"resume@{Config.BOT_USERNAME}", f"skip@{Config.BOT_USERNAME}", f"restart@{Config.BOT_USERNAME}", f"volume@{Config.BOT_USERNAME}", f"shuffle@{Config.BOT_USERNAME}", f"clrlist@{Config.BOT_USERNAME}", f"update@{Config.BOT_USERNAME}"]
+admincmds=["join", "end", "pause", "resume", "skip", "restart", "volume", "shuffle", "clrlist", "update", "replay", "getlogs", "stream", "mute", "unmute", "seek", f"mute@{Config.BOT_USERNAME}", f"unmute@{Config.BOT_USERNAME}", f"seek@{Config.BOT_USERNAME}", f"stream@{Config.BOT_USERNAME}", f"getlogs@{Config.BOT_USERNAME}", f"replay@{Config.BOT_USERNAME}", f"join@{Config.BOT_USERNAME}", f"end@{Config.BOT_USERNAME}", f"pause@{Config.BOT_USERNAME}", f"resume@{Config.BOT_USERNAME}", f"skip@{Config.BOT_USERNAME}", f"restart@{Config.BOT_USERNAME}", f"volume@{Config.BOT_USERNAME}", f"shuffle@{Config.BOT_USERNAME}", f"clrlist@{Config.BOT_USERNAME}", f"update@{Config.BOT_USERNAME}"]
 
 @Client.on_message(filters.command(admincmds) & ~admin_filter & (filters.chat(Config.CHAT_ID) | filters.private | filters.chat(Config.LOG_GROUP)))
 async def notforu(_, m: Message):
-    k=await _.send_cached_media(chat_id=m.chat.id, file_id="CAACAgUAAxkBAAEB1GNhO2oHEh2OqrpucczIprmOIEKZtQACfwMAAjSe9DFG-UktB_TxOh4E", caption="**You Are Not Authorized !!**", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('⚡️ Join Here ⚡️', url='https://t.me/AsmSafone')]]), reply_to_message_id=m.message_id)
+    k=await _.send_cached_media(chat_id=m.chat.id, file_id="CAACAgUAAxkBAAEB1GNhO2oHEh2OqrpucczIprmOIEKZtQACfwMAAjSe9DFG-UktB_TxOh4E", caption="**You Are Not Authorized !!**", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('⚡️ Join Here ⚡️', url='https://t.me/sparkypro')]]), reply_to_message_id=m.message_id)
     await delete(k)
 
-allcmd = ["play", "current", "playlist", f"play@{Config.BOT_USERNAME}", f"current@{Config.BOT_USERNAME}", f"playlist@{Config.BOT_USERNAME}"] + admincmds
+allcmd = ["vplay", "current", "playlist", f"vplay@{Config.BOT_USERNAME}", f"current@{Config.BOT_USERNAME}", f"playlist@{Config.BOT_USERNAME}"] + admincmds
 
