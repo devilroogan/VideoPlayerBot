@@ -144,7 +144,7 @@ async def add_to_playlist(_, message: Message):
         await download(track)
 
 
-@Client.on_message(filters.command(["leave", f"leave@{Config.BOT_USERNAME}"]) & admin_filter & (filters.chat(Config.CHAT_ID) | filters.private | filters.chat(Config.LOG_GROUP)))
+@Client.on_message(filters.command(["end", f"end@{Config.BOT_USERNAME}"]) & admin_filter & (filters.chat(Config.CHAT_ID) | filters.private | filters.chat(Config.LOG_GROUP)))
 async def leave_voice_chat(_, m: Message):
     if not Config.CALL_STATUS:
         k=await m.reply_text("🤖 **Didn't Joined Video Chat !**")
@@ -229,8 +229,8 @@ allcmd = ["play", "current", "playlist", f"play@{Config.BOT_USERNAME}", f"curren
 async def not_chat(_, m: Message):
     buttons = [
             [
-                InlineKeyboardButton("CHANNEL", url="https://t.me/AsmSafone"),
-                InlineKeyboardButton("SUPPORT", url="https://t.me/SafoTheBot"),
+                InlineKeyboardButton("CHANNEL", url="https://t.me/AsmSafoe"),
+                InlineKeyboardButton("SUPPORT", url="https://t.me/SafoTeBot"),
             ],
             [
                 InlineKeyboardButton("🤖 MAKE YOUR OWN BOT 🤖", url="https://heroku.com/deploy?template=https://github.com/AsmSafone/VideoPlayerBot/tree/alpha"),
